@@ -1,0 +1,57 @@
+module.exports = {
+  id: "photo-journey",
+  viewports: [
+    { label: "mobile", width: 375, height: 8530 },
+    { label: "tablet", width: 768, height: 1024 },
+    { label: "desktop", width: 1440, height: 900 },
+  ],
+  scenarios: [
+    {
+      label: "Homepage",
+      url: "http://localhost:3000",
+      delay: 1500,
+      misMatchThreshold: 0.1,
+      requireSameDimensions: false,
+    },
+    {
+      label: "Hero Section",
+      url: "http://localhost:3000",
+      delay: 1000,
+      selectors: ["header", "section:first-of-type"],
+      misMatchThreshold: 0.1,
+      requireSameDimensions: false,
+    },
+    {
+      label: "Gradient Banner",
+      url: "http://localhost:3000",
+      delay: 1000,
+      selectors: ["[data-testid='gradient-banner']"],
+      misMatchThreshold: 0.1,
+      requireSameDimensions: false,
+    },
+    {
+      label: "Footer",
+      url: "http://localhost:3000",
+      delay: 1000,
+      selectors: ["footer"],
+      misMatchThreshold: 0.1,
+      requireSameDimensions: false,
+    },
+  ],
+  paths: {
+    bitmaps_reference: "tests/backstop/bitmaps_reference",
+    bitmaps_test: "tests/backstop/bitmaps_test",
+    engine_scripts: "tests/backstop/engine_scripts",
+    html_report: "tests/backstop/html_report",
+    ci_report: "tests/backstop/ci_report",
+  },
+  report: ["browser"],
+  engine: "puppeteer",
+  engineOptions: {
+    args: ["--no-sandbox", "--disable-setuid-sandbox"],
+  },
+  asyncCaptureLimit: 5,
+  asyncCompareLimit: 50,
+  debug: false,
+  debugWindow: false,
+};
