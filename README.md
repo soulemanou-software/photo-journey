@@ -1,31 +1,174 @@
-# Photo Journey — Through the Lens: Morocco's Imperial Cities
+# Photo Journey - Professional TypeScript Implementation
 
-Pixel-perfect implementation of a travel photography blog page, reproduced faithfully from Figma designs (desktop 1440px, tablet 768px, mobile 375px).
+A photographic journey through Morocco's imperial cities, built with Next.js 14, TypeScript, and Tailwind CSS.
 
-## Tech Stack
+## Features
 
-| Layer | Tool |
-|---|---|
-| Framework | Next.js 14 (App Router) |
-| Language | TypeScript |
-| Styles | TailwindCSS |
-| Visual Tests | BackstopJS |
-| E2E Tests | Playwright |
+- **TypeScript First**: Full type safety with comprehensive interfaces
+- **Component Architecture**: Reusable UI components with proper props typing
+- **Optimized Images**: Next.js Image optimization with responsive sizing
+- **Professional Structure**: Organized codebase with separation of concerns
+- **Modern Hooks**: Custom hooks for common functionality
+- **Responsive Design**: Mobile-first approach with Tailwind CSS
 
-## Design Tokens (extracted from Figma SVGs)
+## Project Structure
 
-| Token | Value |
-|---|---|
-| Main gradient | `#8F9CD3` → `#FFCAA4` (periwinkle → warm peach) |
-| Accent gradient | `#AD54F0` → `#D24DBC` (purple → magenta) |
-| Blob blue | `#8BB5FF` |
-| Blob orange | `#FFD596` |
-| Blob lavender | `#9791EC` |
-| Blob cream | `#FBE8DA` |
-| Text primary | `#1A1A2E` |
-| Text secondary | `#4B4B6A` |
-| Footer bg | `#1A1A2E` |
-| Fonts | Playfair Display (serif) + Inter (sans) |
+```
+src/
+├── app/                    # Next.js App Router
+│   ├── globals.css        # Global styles
+│   ├── layout.tsx         # Root layout
+│   └── page.tsx           # Home page
+├── components/            # React components
+│   ├── ui/               # Reusable UI components
+│   │   ├── Button.tsx    # Button component
+│   │   ├── Badge.tsx     # Badge component
+│   │   ├── Card.tsx      # Card component
+│   │   ├── OptimizedImage.tsx # Image wrapper
+│   │   └── index.ts      # Barrel export
+│   ├── ArticleHero.tsx   # Hero section
+│   ├── ArticlePage.tsx   # Main page component
+│   └── ...               # Other page components
+├── constants/            # Application constants
+│   └── index.ts         # Centralized configuration
+├── hooks/               # Custom React hooks
+│   └── index.ts         # Hook collection
+├── lib/                 # Utility library
+│   ├── utils.ts         # Utility functions
+│   └── constants.ts     # Legacy constants
+├── types/               # TypeScript type definitions
+│   └── index.ts         # Type exports
+└── utils/               # Additional utilities
+    └── index.ts         # Helper functions
+```
+
+## Technologies
+
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Images**: Next.js Image Optimization
+- **Testing**: Playwright (E2E), BackstopJS (Visual)
+
+## Installation
+
+```bash
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
+```
+
+## UI Components
+
+### Button
+```tsx
+import { Button } from '@/components/ui';
+
+<Button variant="primary" size="md" onClick={handleClick}>
+  Click me
+</Button>
+```
+
+### Badge
+```tsx
+import { Badge } from '@/components/ui';
+
+<Badge variant="gradient" size="sm">
+  Photo Journey
+</Badge>
+```
+
+### OptimizedImage
+```tsx
+import { OptimizedImage } from '@/components/ui';
+
+<OptimizedImage
+  src="/image.jpg"
+  alt="Description"
+  width={400}
+  height={300}
+  priority
+/>
+```
+
+## Custom Hooks
+
+### useCarousel
+```tsx
+import { useCarousel } from '@/hooks';
+
+const { currentPage, nextPage, prevPage, visibleItems } = useCarousel(items, 3);
+```
+
+### useLocalStorage
+```tsx
+import { useLocalStorage } from '@/hooks';
+
+const [theme, setTheme] = useLocalStorage('theme', 'light');
+```
+
+## Type Safety
+
+All components are fully typed with TypeScript:
+
+```tsx
+interface ArticleHeroProps {
+  data: ArticleHeroData;
+  className?: string;
+}
+```
+
+## Design System
+
+### Colors
+- Primary Gradient: `#8F9CD3 → #FFCAA4`
+- Secondary Gradient: `#AD54F0 → #D24DBC`
+- Text Primary: `#1A1A2E`
+- Text Secondary: `#4B4B6A`
+
+### Typography
+- Serif: Playfair Display
+- Sans-serif: Inter
+
+## Responsive Breakpoints
+
+- sm: 640px
+- md: 768px
+- lg: 1024px
+- xl: 1280px
+- 2xl: 1536px
+
+## Testing
+
+```bash
+# Run E2E tests
+npm run test:e2e
+
+# Run visual regression tests
+npm run test:visual
+
+# Approve visual changes
+npm run test:visual:approve
+```
+
+## Performance
+
+- Image optimization with Next.js Image component
+- Lazy loading for images
+- Component code splitting
+- Optimized bundle size
+
+## License
+
+MIT License - feel free to use this project for learning or commercial purposes.
 
 ## Getting Started
 

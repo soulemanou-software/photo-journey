@@ -44,73 +44,81 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#1A1A2E] text-[#C4C4D4]">
-      <div className="container-site py-14 md:py-20">
-        {/* 4-column grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
-          {/* Brand */}
+      <div className="container-site py-10 sm:py-12 md:py-16 lg:py-20">
+        {/* 4-column grid - responsive layout */}
+        <div className="grid grid-cols-1 gap-8 
+          sm:grid-cols-2 sm:gap-10 
+          lg:grid-cols-4 lg:gap-12">
+          
+          {/* Brand - responsive sizing */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <Link href="/" className="inline-flex items-center gap-2 mb-4">
-              <span className="w-6 h-6 rounded-full flex items-center justify-center" style={{ background: "linear-gradient(to right,#8F9CD3,#FFCAA4)" }}>
-                <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" strokeWidth="1.8">
+            <Link href="/" className="inline-flex items-center gap-2 mb-3 sm:mb-4">
+              <span className="w-5 h-5 sm:w-6 sm:h-6 rounded-full flex items-center justify-center" style={{ background: "linear-gradient(to right,#8F9CD3,#FFCAA4)" }}>
+                <svg viewBox="0 0 24 24" className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-white" fill="none" stroke="currentColor" strokeWidth="1.8">
                   <circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
                 </svg>
               </span>
-              <span className="text-[17px] font-serif font-bold text-white">{SITE_NAME}</span>
+              <span className="text-[15px] sm:text-[17px] font-serif font-bold text-white">{SITE_NAME}</span>
             </Link>
-            <p className="text-[13px] leading-[1.8] text-[#9090A8] max-w-[240px] mb-6">
+            
+            <p className="text-[12px] sm:text-[13px] leading-[1.7] sm:leading-[1.8] text-[#9090A8] max-w-[240px] mb-4 sm:mb-6">
               Exploring the world through photography. Stories, guides, and inspiration for the modern travel photographer.
             </p>
-            {/* App store buttons */}
-            <div className="flex items-center gap-3 mb-5">
+            
+            {/* App store buttons - responsive sizing */}
+            <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
               <a
                 href="#"
-                className="flex items-center gap-2 px-3 py-2 rounded-xl border border-white/20 bg-white/5 hover:bg-white/10 transition-colors duration-150"
+                className="flex items-center gap-1.5 sm:gap-2 px-2.5 py-2 sm:px-3 sm:py-2 rounded-xl border border-white/20 bg-white/5 hover:bg-white/10 transition-colors duration-150"
               >
-                <svg className="w-5 h-5 text-white flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
                 </svg>
                 <div>
-                  <p className="text-[9px] text-white/60 leading-none">Download on the</p>
-                  <p className="text-[12px] text-white font-semibold leading-tight">App Store</p>
+                  <p className="text-[8px] sm:text-[9px] text-white/60 leading-none">Download on the</p>
+                  <p className="text-[11px] sm:text-[12px] text-white font-semibold leading-tight">App Store</p>
                 </div>
               </a>
               <a
                 href="#"
-                className="flex items-center gap-2 px-3 py-2 rounded-xl border border-white/20 bg-white/5 hover:bg-white/10 transition-colors duration-150"
+                className="flex items-center gap-1.5 sm:gap-2 px-2.5 py-2 sm:px-3 sm:py-2 rounded-xl border border-white/20 bg-white/5 hover:bg-white/10 transition-colors duration-150"
               >
-                <svg className="w-5 h-5 text-white flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M3.18 23.76c.38.21.82.22 1.22.04l12.2-6.87-2.63-2.63-10.79 9.46zM.59 1.09C.22 1.51 0 2.16 0 2.98v18.04c0 .82.22 1.47.6 1.89l.1.09 10.11-10.11v-.24L.7 1-.1 1.09H.59zm19.05 8.5L16.6 7.54 13.96 10.2l2.65 2.65 3.04-1.71c.87-.49.87-1.29-.01-1.55zM4.4.21L16.6 7.08l-2.64 2.63L3.18.25C3.58.07 4.02.08 4.4.21z"/>
                 </svg>
                 <div>
-                  <p className="text-[9px] text-white/60 leading-none">Get it on</p>
-                  <p className="text-[12px] text-white font-semibold leading-tight">Google Play</p>
+                  <p className="text-[8px] sm:text-[9px] text-white/60 leading-none">Get it on</p>
+                  <p className="text-[11px] sm:text-[12px] text-white font-semibold leading-tight">Google Play</p>
                 </div>
               </a>
             </div>
-            {/* Social icons */}
-            <div className="flex items-center gap-2.5">
+            
+            {/* Social icons - responsive sizing */}
+            <div className="flex items-center gap-2">
               {SOCIAL_ICONS.map((s) => (
                 <a
                   key={s.id}
                   href="#"
                   aria-label={s.id}
-                  className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors duration-150"
+                  className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors duration-150"
                 >
-                  {s.svg}
+                  <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4" viewBox="0 0 24 24" fill="currentColor">
+                    {s.svg.props.children}
+                  </svg>
                 </a>
               ))}
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Quick Links - responsive sizing */}
           <div>
-            <h3 className="text-[11px] font-semibold text-white uppercase tracking-[0.12em] mb-5">
+            <h3 className="text-[10px] sm:text-[11px] font-semibold text-white uppercase tracking-[0.12em] mb-4 sm:mb-5">
               Quick Links
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2.5 sm:space-y-3">
               {FOOTER_LINKS.quickLinks.map((l) => (
                 <li key={l.label}>
-                  <Link href={l.href} className="text-[13px] text-[#9090A8] hover:text-white transition-colors duration-150">
+                  <Link href={l.href} className="text-[12px] sm:text-[13px] text-[#9090A8] hover:text-white transition-colors duration-150">
                     {l.label}
                   </Link>
                 </li>
@@ -118,15 +126,15 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Categories */}
+          {/* Categories - responsive sizing */}
           <div>
-            <h3 className="text-[11px] font-semibold text-white uppercase tracking-[0.12em] mb-5">
+            <h3 className="text-[10px] sm:text-[11px] font-semibold text-white uppercase tracking-[0.12em] mb-4 sm:mb-5">
               Categories
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2.5 sm:space-y-3">
               {FOOTER_LINKS.categories.map((l) => (
                 <li key={l.label}>
-                  <Link href={l.href} className="text-[13px] text-[#9090A8] hover:text-white transition-colors duration-150">
+                  <Link href={l.href} className="text-[12px] sm:text-[13px] text-[#9090A8] hover:text-white transition-colors duration-150">
                     {l.label}
                   </Link>
                 </li>
@@ -134,27 +142,28 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Newsletter */}
+          {/* Newsletter - responsive sizing */}
           <div>
-            <h3 className="text-[11px] font-semibold text-white uppercase tracking-[0.12em] mb-5">
+            <h3 className="text-[10px] sm:text-[11px] font-semibold text-white uppercase tracking-[0.12em] mb-4 sm:mb-5">
               Newsletter
             </h3>
-            <p className="text-[13px] text-[#9090A8] leading-[1.7] mb-5">
+            <p className="text-[12px] sm:text-[13px] text-[#9090A8] leading-[1.6] sm:leading-[1.7] mb-4 sm:mb-5">
               Subscribe for the latest stories and photography tips.
             </p>
-            {/* Input + button — matches SVG paint1 gradient button */}
+            
+            {/* Input + button - responsive sizing */}
             <div className="flex rounded-full border border-white/20 overflow-hidden">
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Your email"
-                className="flex-1 bg-transparent px-4 py-2.5 text-[13px] text-white placeholder:text-white/30 outline-none min-w-0"
+                className="flex-1 bg-transparent px-3 py-2 sm:px-4 sm:py-2.5 text-[12px] sm:text-[13px] text-white placeholder:text-white/30 outline-none min-w-0"
               />
               <button
                 type="button"
                 onClick={() => setEmail("")}
-                className="px-5 py-2.5 text-[12px] font-semibold text-white rounded-full flex-shrink-0"
+                className="px-4 py-2 sm:px-5 sm:py-2.5 text-[11px] sm:text-[12px] font-semibold text-white rounded-full flex-shrink-0"
                 style={{ background: "linear-gradient(to right, #8F9CD3, #FFCAA4)" }}
               >
                 Join
@@ -163,14 +172,14 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="mt-14 pt-7 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-[12px] text-[#9090A8]">
+        {/* Bottom bar - responsive layout */}
+        <div className="mt-10 sm:mt-12 lg:mt-14 pt-5 sm:pt-6 lg:pt-7 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
+          <p className="text-[11px] sm:text-[12px] text-[#9090A8]">
             &copy; {new Date().getFullYear()} {SITE_NAME}. All rights reserved.
           </p>
-          <div className="flex items-center gap-5">
+          <div className="flex items-center gap-3 sm:gap-5">
             {FOOTER_LINKS.legal.map((l) => (
-              <Link key={l.label} href={l.href} className="text-[12px] text-[#9090A8] hover:text-white transition-colors duration-150">
+              <Link key={l.label} href={l.href} className="text-[11px] sm:text-[12px] text-[#9090A8] hover:text-white transition-colors duration-150">
                 {l.label}
               </Link>
             ))}
