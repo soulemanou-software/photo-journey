@@ -28,32 +28,24 @@ export default function FezSection() {
           <div className="mt-4 space-y-3 text-[13px] leading-[1.7] text-[#4B4B6A] 
             sm:mt-5 sm:space-y-4 sm:text-[14px] sm:leading-[1.8] 
             md:text-[15px] md:leading-[1.9]">
-            <p>
-              Fez feels less like a place you visit and more like a place you decode. The medina opens through fragments — a brass lantern in a shadowed stall, a wall of mosaic suddenly catching the sun, a carved arch that seems to hold centuries of quiet craftsmanship in a single frame.
-            </p>
-            <p>
-              Photographing Fez means paying attention to repetition and interruption. Pattern is everywhere, but the images that stay with you are the ones where a person, a gesture, or a sliver of moving light breaks that pattern for just a second.
-            </p>
-            <p>
-              The city teaches detail as discipline. Not everything needs to be wide. Sometimes the strongest photograph is simply a doorway, a curve of stone, or the soft shift from blue shadow into warm afternoon color.
-            </p>
+            If Marrakech is a drumbeat, Fez is a whisper—an intricate, intelligent city built for slow looking. It has one of the world’s most complex medinas, where narrow alleys twist into tiny squares, workshops spill into streets, and carved doors appear like secret portals.
+What to photograph in Fez.  Medina geometry. Fez’s lanes are a 
+dream for <a href="#" className= "text-pink-700">This is an external link</a>                                           this composition.
+A simple trick: place your camera at chest height, keep your frame level, and let the city’s architecture do the work. Fez is naturally cinematic.Zellige (tilework) and artisan surfaces. Tiles here aren’t decoration—they’re language. Look for mosaic fountains, courtyard walls, and doorframes. Get close for texture shots and pull back for structure. 
+
+<br/><br/><b>Tip:</b> the smell can be strong—many visitors use mint sprigs offered nearby. Workshop portraits in dramatic light. Craft workshops often have beautiful lighting: beams through small windows, dust floating in the air, warm tones bouncing off wood and metal. If you’re invited in (or given permission), shoot gently. Expose for highlights to keep the “light beam” mood. Capture hands, tools, and faces in partial shadow. Focus on gestures: measuring, cutting, threading, polishing.
           </div>
-          
-          {/* Decorative line - responsive width */}
-          <div className="mt-4 h-[1px] w-[150px] rounded-full 
-            sm:mt-5 sm:h-[1.2px] sm:w-[170px] 
-            md:w-[190px]" 
-            style={{ background: "linear-gradient(90deg,#AD54F0,#D24DBC)" }} />
+        
         </div>
         
         {/* Image composition - responsive sizing */}
-        <div className="relative mx-auto h-[280px] w-[260px] 
+        <div className="relative flex flex-row gap-1 justify-center align-center mx-auto h-[280px] w-[260px] 
           sm:h-[320px] sm:w-[300px] 
           md:h-[340px] md:w-[320px] 
           lg:h-[390px] lg:w-[390px]">
           
           {/* Main tall image - responsive */}
-          <div className="absolute bottom-0 left-0 h-[240px] w-[165px] overflow-hidden rounded-[999px] shadow-[0_26px_60px_rgba(26,26,46,0.18)] 
+          <div className="relative h-[240px] w-[165px] overflow-hidden rounded-[999px] shadow-[0_26px_60px_rgba(26,26,46,0.18)] 
             sm:h-[270px] sm:w-[185px] 
             md:h-[285px] md:w-[195px] 
             lg:h-[330px] lg:w-[220px]">
@@ -68,10 +60,10 @@ export default function FezSection() {
           </div>
           
           {/* Small circular image - responsive */}
-          <div className="absolute right-0 top-[70px] h-[120px] w-[120px] overflow-hidden rounded-full border-[4px] border-white shadow-[0_24px_55px_rgba(26,26,46,0.16)] 
-            sm:top-[80px] sm:h-[132px] sm:w-[132px] sm:border-[5px] 
+          <div className="relative h-[120px] w-[120px] overflow-hidden rounded-full  shadow-[0_24px_55px_rgba(26,26,46,0.16)] 
+            sm:top-[80px] sm:h-[132px] sm:w-[132px]  
             md:top-[86px] md:h-[144px] md:w-[144px] 
-            lg:top-[92px] lg:h-[156px] lg:w-[156px] lg:border-[6px]">
+            lg:top-[92px] lg:h-[156px] lg:w-[156px] ">
             <OptimizedImage 
               src={visuals.fezMini} 
               alt="Fez street scene" 
