@@ -19,23 +19,22 @@ export default function MarrakechSection() {
   return (
     <section className="container-site pb-16 md:pb-20 lg:pb-24">
       {/* Grid layout - responsive */}
-      <div className="grid items-start gap-8 
-        sm:gap-10 
-        md:gap-12 
-        lg:grid-cols-[410px_1fr] lg:gap-14">
+      <div className="flex gap-2 w-full">
         {/* Text content - responsive sizing */}
         <div className="max-w-full lg:max-w-full">
-          <h2 className="font-serif text-[26px] font-bold leading-[1.1] text-[#1A1A2E] 
-            sm:text-[30px] 
-            md:text-[32px] 
+          <h2 className="font-serif text-[24px] font-bold leading-[1.1] text-[#1A1A2E] 
+            sm:text-[28px] 
+            md:text-[30px] 
             lg:text-[34px] lg:leading-[1.08]">
             Marrakech: Heat, Motion, and Magic
           </h2>
-          
+
           {/* Paragraphs - responsive text size and spacing */}
+          
           <div className="mt-4 space-y-3 text-[13px] leading-[1.7] text-[#4B4B6A] 
             sm:mt-5 sm:space-y-4 sm:text-[14px] sm:leading-[1.8] 
-            md:text-[15px] md:leading-[1.9]">
+            md:text-[15px] md:leading-[1.9] 
+            lg:text-[16px] lg:leading-[2.0]">
             <p>
               Marrakech moves differently from Fez. The energy is louder, the colors are warmer, and the streets feel more like stages. From the storytellers of Jemaa el-Fnaa to the hidden courtyards where time slows, Marrakech teaches you to photograph <span style={accentTextStyle}>in motion</span>.
             </p>
@@ -46,49 +45,50 @@ export default function MarrakechSection() {
               What makes Marrakech special is the rhythm. It&apos;s a city that alternates between intense activity and sudden quiet. The best photographs capture that tension — the calm within the noise, the order within the chaos.
             </p>
           </div>
-          
-          <div className="flex flex-row sm:flex-col md:flex-row lg:flex-row">
-          {/* Social snippets - responsive spacing */}
-          {/* Image composition - responsive sizing */}
-        <div className="relative mx-auto h-[320px] w-full 
+
+          <div className="flex flex-col sm:flex-row md:flex-col lg:flex-row justify-center align-center">
+            {/* Social snippets - responsive spacing */}
+            {/* Image composition - responsive sizing */}
+            <div className="relative h-[320px] w-[280px] 
           sm:h-[360px] sm:w-[300px] 
           md:h-[385px] md:w-[320px] 
           lg:h-[440px] lg:w-[380px]">
-          
-          {/* Main tall image - responsive */}
-          <div className="absolute bottom-0 left-0 h-[270px] w-[165px] overflow-hidden rounded-[999px] shadow-[0_26px_60px_rgba(26,26,46,0.18)] 
+
+              {/* Main tall image - responsive */}
+              <div className="relative h-[270px] w-[165px] overflow-hidden rounded-[999px] shadow-[0_26px_60px_rgba(26,26,46,0.18)] 
             sm:h-[300px] sm:w-[185px] 
             md:h-[315px] md:w-[195px] 
             lg:h-[370px] lg:w-[220px]">
-            <OptimizedImage 
-              src={visuals.marrakechTall} 
-              alt="Marrakech at sunset" 
-              fill 
-              className="object-cover" 
-              sizes="(max-width:640px) 165px, (max-width:768px) 185px, (max-width:1024px) 195px, 220px" 
-              style={{ filter: "saturate(1.08)" }} 
-            />
-          </div>
-        </div>
-        
-          <div className="mt-5 space-y-3 
+                <OptimizedImage
+                  src={visuals.marrakechTall}
+                  alt="Marrakech at sunset"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width:640px) 165px, (max-width:768px) 185px, (max-width:1024px) 195px, 220px"
+                  style={{ filter: "saturate(1.08)" }}
+                />
+              </div>
+            </div>
+
+            <div className="mt-5 space-y-3 
             sm:mt-6 sm:space-y-4 
             md:mt-7">
-            <SocialSnippet 
-              platform="youtube" 
-              title="The medina at dusk — every shadow tells a story." 
-              handle="@urban_spirits_ma" 
-              image={visuals.socialOne} 
-            />
-            <SocialSnippet 
-              platform="instagram" 
-              title="Lost in the souks. Found in the light." 
-              handle="@mustapha.lens" 
-              image={visuals.socialTwo} 
-            />
-          </div>
+              <SocialSnippet
+                platform="youtube"
+                title="The medina at dusk — every shadow tells a story."
+                handle="@urban_spirits_ma"
+                image={visuals.socialOne}
+              />
+              <SocialSnippet
+                platform="instagram"
+                title="Lost in the souks. Found in the light."
+                handle="@mustapha.lens"
+                image={visuals.socialTwo}
+              />
+            </div>
 
           </div>
+
         </div>
       </div>
     </section>
