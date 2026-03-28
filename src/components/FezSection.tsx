@@ -55,7 +55,6 @@ A simple trick: place your camera at chest height, keep your frame level, and le
               fill 
               className="object-cover" 
               sizes="(max-width:640px) 165px, (max-width:768px) 185px, (max-width:1024px) 195px, 220px" 
-              style={{ filter: "saturate(1.08)" }} 
             />
           </div>
           

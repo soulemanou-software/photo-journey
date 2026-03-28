@@ -20,7 +20,7 @@ export default function ChasingMorocco() {
         sm:text-[26px] 
         md:text-[28px] 
         lg:text-[32px]">
-        Chasing Morocco as a Photographic Teacher
+       Closing: Morocco as a Photographic Teacher
       </h2>
 
       {/* Content layout - responsive */}
@@ -39,6 +39,8 @@ export default function ChasingMorocco() {
           <p>
             More than anything, Morocco teaches the photographer how to notice. It asks you to wait for gesture, trust texture, and understand that the emotional center of an image is often quieter than its brightest color.
           </p>
+
+          
           <p>
             When you leave, you take more than photographs. You carry a sharper sense of rhythm — of when to step closer, when to pull back, and when to let a scene breathe. The medinas, markets, and courtyards become lessons in <span style={accentTextStyle}>light, patience, and presence</span>.
           </p>
@@ -46,31 +48,21 @@ export default function ChasingMorocco() {
             That is why Morocco lingers. Not only because it is visually beautiful, but because it trains the eye to look with care. And once you have learned that way of seeing, every place after it feels richer.
           </p>
           
-          {/* CTA Button - responsive sizing */}
-          <div>
-            <button 
-              type="button" 
-              className="mt-2 inline-block rounded-full px-4 py-2 text-[11px] font-semibold text-white 
-                sm:px-5 sm:py-2.5 sm:text-[12px] 
-                md:px-6 md:py-2.5" 
-              style={{ background: "linear-gradient(90deg,#AD54F0,#D24DBC)" }}>
-              Continue Reading
-            </button>
-          </div>
+          
         </div>
 
-        {/* Right: large pill image - responsive sizing */}
-        <div className="relative mx-auto h-[220px] w-[280px] flex-shrink-0 overflow-hidden rounded-[999px] shadow-[0_28px_70px_rgba(26,26,46,0.18)] 
-          sm:h-[260px] sm:w-[320px] 
-          md:h-[300px] md:w-[350px] 
-          lg:h-[380px] lg:w-[340px] 
-          xl:h-[400px] xl:w-[360px]">
+        {/* Right: large oval image - responsive sizing */}
+        <div className="relative mx-auto w-[280px] h-[280px] flex-shrink-0 overflow-hidden rounded-[999px] shadow-[0_28px_70px_rgba(26,26,46,0.18)] 
+          sm:w-[320px] sm:h-[320px] 
+          md:w-[380px] md:h-[350px] 
+          lg:w-[460px] lg:h-[340px] 
+          xl:w-[480px] xl:h-[360px] ">
           <OptimizedImage 
             src={visuals.closing} 
             alt="Closing Morocco scene" 
             fill 
             className="object-cover" 
-            sizes="(max-width:640px) 280px, (max-width:768px) 320px, (max-width:1024px) 350px, 360px" 
+            sizes="(max-width:640px) 280px, (max-width:768px) 320px, (max-width:1024px) 380px, 480px" 
           />
         </div>
       </div>

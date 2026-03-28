@@ -14,9 +14,7 @@ export default function ArticleHero({ data, className }: ArticleHeroProps) {
     <section className={cn("container-site pt-10 pb-14 md:pt-14 md:pb-20 lg:pt-16 lg:pb-24", className)}>
       <div className="flex flex-col-reverse items-center gap-10 lg:flex-row lg:items-center lg:gap-8">
 
-        {/* Left: text */}
         <div className="w-full flex-1 min-w-0">
-          {/* Category badge */}
           <Badge 
             variant="gradient" 
             size="sm"
@@ -25,17 +23,14 @@ export default function ArticleHero({ data, className }: ArticleHeroProps) {
             {data.category}
           </Badge>
 
-          {/* Title */}
           <h1 className="mt-5 font-serif text-[34px] font-[400] leading-[1.2] text-black sm:text-[42px] lg:text-[54px] xl:text-[60px]">
             {data.title}
           </h1>
 
-          {/* Description */}
           <p className="mt-5 max-w-[560px] text-[14px] leading-[1.8] text-[#4B4B6A] md:text-[15px]">
             {data.description}
           </p>
 
-          {/* Tags */}
           <div className="mt-5 flex flex-wrap items-center gap-2">
             {data.tags.map((tag) => (
               <Badge
@@ -56,7 +51,6 @@ export default function ArticleHero({ data, className }: ArticleHeroProps) {
             ))}
           </div>
 
-          {/* Author */}
           <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2 text-[12px] text-[#9090A8]">
             <div className="relative h-8 w-8 overflow-hidden rounded-full ring-2 ring-white shadow-sm">
               <OptimizedImage
@@ -79,29 +73,19 @@ export default function ArticleHero({ data, className }: ArticleHeroProps) {
           </div>
         </div>
 
-        {/* Right: image composition */}
         <div className="relative mx-auto h-[320px] w-[320px] flex-shrink-0 sm:h-[380px] sm:w-[380px] lg:h-[460px] lg:w-[460px]">
-          {/* Background shape - responsive positioning and rotation */}
           <div className="absolute inset-0 h-[60rem] w-[40rem] rounded-[15rem] bg-[#F0F1FA]
-            /* Mobile: Small rotation and positioning */
-            -top-[20rem] -right-[8rem] -rotate-[15deg]
-            /* Tablet: Medium rotation and positioning */
-            sm:-top-[22rem] sm:-right-[10rem] sm:-rotate-[18deg]
-            /* Desktop: Standard rotation and positioning */
-            lg:-top-[25rem] lg:-right-[12rem] lg:-rotate-[22deg]
-            /* Large desktop: More dramatic rotation and positioning */
-            xl:-top-[28rem] xl:-right-[14rem] xl:-rotate-[25deg]
+            md:-top-[20rem] md:-right-[13rem] md:-rotate-[15deg]
+             -top-[35rem] -left-[3rem] -rotate-[40deg]
+            sm:-top-[22rem] sm:-right-[15rem] sm:-rotate-[45deg]
+            lg:-top-[25rem] lg:-right-[33rem] lg:-rotate-[45deg]
+            xl:-top-[28rem] xl:-right-[20rem] xl:-rotate-[45deg]
           " />
 
-          {/* Main image - responsive positioning */}
           <div className="absolute z-10 h-[70%] w-[70%] overflow-hidden rounded-full shadow-[0_24px_60px_rgba(38,67,104,0.18)]
-            /* Mobile positioning */
-            left-[14rem] top-[2rem] rotate-[-95deg] -translate-x-1/2 -translate-y-1/2
-            /* Tablet positioning */
+            left-[14rem] sm: top-[2rem] rotate-[-95deg] -translate-x-1/2 -translate-y-1/2
             sm:left-[16rem] sm:top-[2.5rem] sm:rotate-[-100deg]
-            /* Desktop positioning */
             lg:left-[18rem] lg:top-[3rem] lg:rotate-[-105deg]
-            /* Large desktop */
             xl:left-[20rem] xl:top-[3.5rem] xl:rotate-[-110deg]
           ">
             <OptimizedImage
@@ -110,33 +94,23 @@ export default function ArticleHero({ data, className }: ArticleHeroProps) {
               fill
               sizes="(max-width:640px) 185px,(max-width:1024px) 220px,267px"
               priority
-              onError={(e) => console.error("Main image failed to load:", data.images.main)}
-              onLoad={() => console.log("Main image loaded successfully:", data.images.main)}
             />
 
-            {/* Overlay */}
             <div className="absolute -left-[0.5rem] top-[6rem] font-medium rotate-[105deg] text-center w-[10rem] text-wrap bg-black/30 backdrop-blur-sm px-3 py-2 text-white text-[15px]">
               @This is a random copyrighted image source
             </div>
           </div>
 
-          {/* Secondary image - responsive positioning */}
           <div className="absolute z-10 h-[45%] w-[45%] overflow-hidden rounded-full shadow-[0_16px_40px_rgba(26,26,46,0.16)]
-            /* Mobile positioning */
             bottom-3 -right-6 rotate-[-8deg]
-            /* Tablet positioning */
             sm:bottom-4 sm:-right-8 sm:rotate-[-10deg]
-            /* Desktop positioning */
             lg:bottom-5 lg:-right-10 lg:rotate-[-12deg]
-            /* Large desktop */
             xl:bottom-6 xl:-right-12 xl:rotate-[-14deg]
           ">
             <OptimizedImage
               src={data.images.secondary}
               alt="Secondary visual"
               fill
-              onError={(e) => console.error("Secondary image failed to load:", data.images.secondary)}
-              onLoad={() => console.log("Secondary image loaded successfully:", data.images.secondary)}
             />
 
             <div className="absolute md:left-[1.7rem] md:font-medium md:top-[7rem] rotate-[10deg] text-center w-[9rem] text-wrap bg-black/30 backdrop-blur-sm px-2 py-1 text-white text-[11px]">

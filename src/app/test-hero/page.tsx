@@ -15,8 +15,6 @@ export default function TestHero() {
               alt="Main test image"
               fill
               className="object-cover"
-              onError={(e) => console.error("Main image error:", e)}
-              onLoad={() => console.log("Main image loaded")}
             />
           </div>
         </div>
@@ -30,8 +28,6 @@ export default function TestHero() {
               alt="Secondary test image"
               fill
               className="object-cover"
-              onError={(e) => console.error("Secondary image error:", e)}
-              onLoad={() => console.log("Secondary image loaded")}
             />
           </div>
         </div>
@@ -46,8 +42,6 @@ export default function TestHero() {
                 alt="Complex positioning test"
                 fill
                 className="object-cover"
-                onError={(e) => console.error("Complex positioning error:", e)}
-                onLoad={() => console.log("Complex positioning loaded")}
               />
             </div>
             <div className="absolute bottom-5 -right-10 z-10 h-[45%] w-[45%] rotate-[-12deg] overflow-hidden rounded-full shadow-lg">
@@ -56,8 +50,6 @@ export default function TestHero() {
                 alt="Complex positioning test 2"
                 fill
                 className="object-cover"
-                onError={(e) => console.error("Complex positioning 2 error:", e)}
-                onLoad={() => console.log("Complex positioning 2 loaded")}
               />
             </div>
           </div>

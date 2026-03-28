@@ -23,14 +23,6 @@ export default function TestImages() {
                 alt={img.alt}
                 fill
                 className="object-contain"
-                onError={(e) => {
-                  console.error(`Failed to load image: ${img.src}`);
-                  const target = e.target as HTMLImageElement;
-                  target.style.display = 'none';
-                }}
-                onLoad={() => {
-                  console.log(`Successfully loaded: ${img.src}`);
-                }}
               />
             </div>
             <p className="text-sm text-gray-600 mt-2">{img.src}</p>

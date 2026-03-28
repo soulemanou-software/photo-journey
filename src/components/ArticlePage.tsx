@@ -24,7 +24,7 @@ export default function ArticlePage() {
             category: ARTICLE_DATA.category,
             title: ARTICLE_DATA.title,
             description: ARTICLE_DATA.description,
-            tags: ARTICLE_DATA.tags,
+            tags: [...ARTICLE_DATA.tags] as any,
             author: {
               name: ARTICLE_DATA.author,
               avatar: "/images/3pp.png",

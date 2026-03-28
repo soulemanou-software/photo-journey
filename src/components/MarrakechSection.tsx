@@ -46,13 +46,13 @@ export default function MarrakechSection() {
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row md:flex-col lg:flex-row justify-center align-center">
+          <div className="flex flex-col md:flex-col lg:flex-row justify-center align-center">
             {/* Social snippets - responsive spacing */}
             {/* Image composition - responsive sizing */}
             <div className="relative h-[320px] w-[280px] 
           sm:h-[360px] sm:w-[300px] 
           md:h-[385px] md:w-[320px] 
-          lg:h-[440px] lg:w-[380px]">
+          lg:h-[440px] lg:w-[380px] flex justify-center align-center pt-2 w-full">
 
               {/* Main tall image - responsive */}
               <div className="relative h-[270px] w-[165px] overflow-hidden rounded-[999px] shadow-[0_26px_60px_rgba(26,26,46,0.18)] 
@@ -65,14 +65,13 @@ export default function MarrakechSection() {
                   fill
                   className="object-cover"
                   sizes="(max-width:640px) 165px, (max-width:768px) 185px, (max-width:1024px) 195px, 220px"
-                  style={{ filter: "saturate(1.08)" }}
                 />
               </div>
             </div>
 
             <div className="mt-5 space-y-3 
             sm:mt-6 sm:space-y-4 
-            md:mt-7">
+            md:mt-7 flex  justify-center align-center flex-col">
               <SocialSnippet
                 platform="youtube"
                 title="The medina at dusk — every shadow tells a story."
