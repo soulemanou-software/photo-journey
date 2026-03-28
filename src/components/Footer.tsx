@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { SITE_NAME, FOOTER_LINKS } from "@/lib/constants";
+import { SITE_NAME } from "@/lib/constants";
 
-const SOCIAL_ICONS: { id: string; svg: React.ReactNode }[] = [
+const SOCIAL_ICONS = [
   {
     id: "facebook",
     svg: (
@@ -41,139 +41,179 @@ const SOCIAL_ICONS: { id: string; svg: React.ReactNode }[] = [
 
 export default function Footer() {
   const [email, setEmail] = useState("");
+  const [currentLanguage, setCurrentLanguage] = useState("EN");
+
+  const languages = [
+    { code: "EN", label: "English" },
+    { code: "FR", label: "Français" },
+    { code: "AR", label: "العربية" },
+    { code: "ES", label: "Español" },
+  ];
 
   return (
-    <footer className="bg-[#1A1A2E] text-[#C4C4D4]">
-      <div className="container-site py-14 md:py-20">
-        {/* 4-column grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
-          {/* Brand */}
-          <div className="sm:col-span-2 lg:col-span-1">
-            <Link href="/" className="inline-flex items-center gap-2 mb-4">
-              <span className="w-6 h-6 rounded-full flex items-center justify-center" style={{ background: "linear-gradient(to right,#8F9CD3,#FFCAA4)" }}>
-                <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" strokeWidth="1.8">
-                  <circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+    <footer className="bg-[#1A1A2E] text-white">
+      <div className="container-site px-4 py-16 sm:px-6 lg:px-8">
+        {/* Main 4-column grid */}
+        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
+          
+          {/* Column 1: Brand */}
+          <div className="space-y-6">
+            {/* Logo and brand name */}
+            <Link href="/" className="flex items-center space-x-3">
+              <div className="w-8 h-8 rounded-full bg-gradient-to-r from-[#8F9CD3] to-[#FFCAA4] flex items-center justify-center">
+                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
                 </svg>
-              </span>
-              <span className="text-[17px] font-serif font-bold text-white">{SITE_NAME}</span>
+              </div>
+              <span className="text-xl font-serif font-bold text-white">{SITE_NAME}</span>
             </Link>
-            <p className="text-[13px] leading-[1.8] text-[#9090A8] max-w-[240px] mb-6">
+            
+            {/* Description */}
+            <p className="text-sm leading-relaxed text-gray-400 max-w-xs">
               Exploring the world through photography. Stories, guides, and inspiration for the modern travel photographer.
             </p>
-            {/* App store buttons */}
-            <div className="flex items-center gap-3 mb-5">
+            
+            {/* App Store and Google Play buttons */}
+            <div className="flex flex-row space-x-3">
+              {/* App Store button */}
               <a
                 href="#"
-                className="flex items-center gap-2 px-3 py-2 rounded-xl border border-white/20 bg-white/5 hover:bg-white/10 transition-colors duration-150"
+                className="flex items-center space-x-2 px-3 py-2.5 rounded-xl border border-white/20 bg-white/5 hover:bg-white/10 transition-colors duration-200"
               >
                 <svg className="w-5 h-5 text-white flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
                 </svg>
                 <div>
-                  <p className="text-[9px] text-white/60 leading-none">Download on the</p>
-                  <p className="text-[12px] text-white font-semibold leading-tight">App Store</p>
+                  <p className="text-xs text-white/60 leading-none">Download on the</p>
+                  <p className="text-sm text-white font-semibold leading-tight">App Store</p>
                 </div>
               </a>
+              
+              {/* Google Play button */}
               <a
                 href="#"
-                className="flex items-center gap-2 px-3 py-2 rounded-xl border border-white/20 bg-white/5 hover:bg-white/10 transition-colors duration-150"
+                className="flex items-center space-x-2 px-3 py-2.5 rounded-xl border border-white/20 bg-white/5 hover:bg-white/10 transition-colors duration-200"
               >
                 <svg className="w-5 h-5 text-white flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M3.18 23.76c.38.21.82.22 1.22.04l12.2-6.87-2.63-2.63-10.79 9.46zM.59 1.09C.22 1.51 0 2.16 0 2.98v18.04c0 .82.22 1.47.6 1.89l.1.09 10.11-10.11v-.24L.7 1-.1 1.09H.59zm19.05 8.5L16.6 7.54 13.96 10.2l2.65 2.65 3.04-1.71c.87-.49.87-1.29-.01-1.55zM4.4.21L16.6 7.08l-2.64 2.63L3.18.25C3.58.07 4.02.08 4.4.21z"/>
+                  <path d="M3.18 23.76c.38.21.82.22 1.22.04l12.2-6.87-2.63-2.63-10.79 9.46zM.59 3.09C.22 1.51 0 2.16 0 2.98v18.04c0 .82.22 1.47.6 1.89l.1.09 10.11-10.11v-.24L.7 1-.1 1.09H.59zm19.05 8.5L16.6 7.54 13.96 10.2l2.65 2.65 3.04-1.71c.87-.49.87-1.29-.01-1.55zM4.4.21L16.6 7.08l-2.64 2.63L3.18.25C3.58.07 4.02.08 4.4.21z"/>
                 </svg>
                 <div>
-                  <p className="text-[9px] text-white/60 leading-none">Get it on</p>
-                  <p className="text-[12px] text-white font-semibold leading-tight">Google Play</p>
+                  <p className="text-xs text-white/60 leading-none">Get it on</p>
+                  <p className="text-sm text-white font-semibold leading-tight">Google Play</p>
                 </div>
               </a>
             </div>
-            {/* Social icons */}
-            <div className="flex items-center gap-2.5">
-              {SOCIAL_ICONS.map((s) => (
-                <a
-                  key={s.id}
-                  href="#"
-                  aria-label={s.id}
-                  className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors duration-150"
+          </div>
+
+          {/* Column 2: Quick Links */}
+          <div className="space-y-6">
+            <h3 className="text-xs font-semibold text-white uppercase tracking-wider">Quick Links</h3>
+            <ul className="space-y-4">
+              {["About Us", "Contact", "Blog", "Careers"].map((item) => (
+                <li key={item}>
+                  <Link href="#" className="text-sm text-gray-400 hover:text-white transition-colors duration-200">
+                    {item}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 3: Categories */}
+          <div className="space-y-6">
+            <h3 className="text-xs font-semibold text-white uppercase tracking-wider">Categories</h3>
+            <ul className="space-y-4">
+              {["Travel", "Photography", "Morocco", "Culture"].map((item) => (
+                <li key={item}>
+                  <Link href="#" className="text-sm text-gray-400 hover:text-white transition-colors duration-200">
+                    {item}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 4: Newsletter */}
+          <div className="space-y-6">
+            <h3 className="text-xs font-semibold text-white uppercase tracking-wider">Stay Updated</h3>
+            
+            {/* Newsletter description */}
+            <p className="text-sm leading-relaxed text-gray-400">
+              Subscribe for the latest stories and photography tips.
+            </p>
+            
+            {/* Email signup - fixed layout */}
+            <div className="w-full">
+              <div className="flex rounded-full border border-white/20 overflow-hidden">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Your email"
+                  className="flex-1 bg-transparent px-4 py-3 text-sm text-white placeholder-gray-500 outline-none min-w-0"
+                />
+                <button
+                  type="button"
+                  onClick={() => setEmail("")}
+                  className="px-6 py-3 text-sm font-semibold text-white flex-shrink-0 transition-colors duration-200"
+                  style={{ background: "linear-gradient(to right, #8F9CD3, #FFCAA4)" }}
                 >
-                  {s.svg}
+                  Join
+                </button>
+              </div>
+            </div>
+            
+            {/* Subscription consent text */}
+            <p className="text-xs leading-relaxed text-gray-400 max-w-xs">
+              By subscribing, you agree to receive marketing emails from Photo Journey. You can unsubscribe at any time. Read our <a href="#" className="text-white hover:underline">Privacy Policy</a> to learn how we handle your data.
+            </p>
+            
+            {/* Social icons - directly below consent text */}
+            <div className="flex space-x-3">
+              {SOCIAL_ICONS.map((social) => (
+                <a
+                  key={social.id}
+                  href="#"
+                  className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors duration-200"
+                  aria-label={social.id}
+                >
+                  {social.svg}
                 </a>
               ))}
             </div>
           </div>
-
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-[11px] font-semibold text-white uppercase tracking-[0.12em] mb-5">
-              Quick Links
-            </h3>
-            <ul className="space-y-3">
-              {FOOTER_LINKS.quickLinks.map((l) => (
-                <li key={l.label}>
-                  <Link href={l.href} className="text-[13px] text-[#9090A8] hover:text-white transition-colors duration-150">
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Categories */}
-          <div>
-            <h3 className="text-[11px] font-semibold text-white uppercase tracking-[0.12em] mb-5">
-              Categories
-            </h3>
-            <ul className="space-y-3">
-              {FOOTER_LINKS.categories.map((l) => (
-                <li key={l.label}>
-                  <Link href={l.href} className="text-[13px] text-[#9090A8] hover:text-white transition-colors duration-150">
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Newsletter */}
-          <div>
-            <h3 className="text-[11px] font-semibold text-white uppercase tracking-[0.12em] mb-5">
-              Newsletter
-            </h3>
-            <p className="text-[13px] text-[#9090A8] leading-[1.7] mb-5">
-              Subscribe for the latest stories and photography tips.
-            </p>
-            {/* Input + button — matches SVG paint1 gradient button */}
-            <div className="flex rounded-full border border-white/20 overflow-hidden">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Your email"
-                className="flex-1 bg-transparent px-4 py-2.5 text-[13px] text-white placeholder:text-white/30 outline-none min-w-0"
-              />
-              <button
-                type="button"
-                onClick={() => setEmail("")}
-                className="px-5 py-2.5 text-[12px] font-semibold text-white rounded-full flex-shrink-0"
-                style={{ background: "linear-gradient(to right, #8F9CD3, #FFCAA4)" }}
-              >
-                Join
-              </button>
-            </div>
-          </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="mt-14 pt-7 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-[12px] text-[#9090A8]">
-            &copy; {new Date().getFullYear()} {SITE_NAME}. All rights reserved.
-          </p>
-          <div className="flex items-center gap-5">
-            {FOOTER_LINKS.legal.map((l) => (
-              <Link key={l.label} href={l.href} className="text-[12px] text-[#9090A8] hover:text-white transition-colors duration-150">
-                {l.label}
-              </Link>
-            ))}
+        {/* Bottom bar with social icons, copyright, legal links and language */}
+        <div className="mt-16 pt-8 border-t border-white/10">
+          <div className="flex flex-col lg:flex-row justify-between items-center space-y-6 lg:space-y-0">
+            
+            {/* Left side: Copyright */}
+            <p className="text-sm text-gray-400 order-2 lg:order-1">
+              © {new Date().getFullYear()} {SITE_NAME}. All rights reserved.
+            </p>
+            
+            {/* Center: Legal links */}
+            <div className="flex space-x-6 order-1 lg:order-2">
+              {["Privacy Policy", "Terms of Service", "Cookie Policy"].map((item) => (
+                <Link key={item} href="#" className="text-sm text-gray-400 hover:text-white transition-colors duration-200">
+                  {item}
+                </Link>
+              ))}
+            </div>
+            
+            {/* Right side: Language selector only */}
+            <button className="flex items-center space-x-2 px-4 py-3 rounded-lg border border-white/20 bg-white/5 hover:bg-white/10 transition-colors duration-200 text-sm text-white order-3">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+              <span>{currentLanguage}</span>
+              <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path d="M6 9l6 6 6-6"/>
+              </svg>
+            </button>
           </div>
         </div>
       </div>

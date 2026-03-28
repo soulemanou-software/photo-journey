@@ -1,77 +1,92 @@
 import Image from "next/image";
-import { IMAGES, AUTHOR } from "@/lib/constants";
+import { AUTHOR } from "@/lib/constants";
+import OptimizedImage from "./ui/OptimizedImage";
 
-const SMALL_CIRCLES = [
-  { src: IMAGES.behindTheLens.moroccanDoor, alt: "Moroccan doorway" },
-  { src: IMAGES.behindTheLens.blueStreet, alt: "Blue streets" },
-  { src: IMAGES.behindTheLens.minaret, alt: "Moroccan minaret" },
-];
+const visuals = {
+  behindCard: "https://picsum.photos/seed/article-behind-card/500/500",
+};
 
 export default function BehindTheLens() {
   return (
-    <section className="container-site py-14 md:py-20">
-      {/* ── Section heading ── */}
-      <div className="text-center mb-10 md:mb-14">
-        <h2 className="font-serif font-bold text-[26px] md:text-[32px] lg:text-[38px] text-[#1A1A2E]">
-          Behind The Lens
-        </h2>
-        <div className="section-divider" />
-      </div>
+    <section className="container-site pb-16 md:pb-20 lg:pb-24">
+      {/* Title - responsive sizing */}
+      <h2 className="text-center font-serif text-[22px] font-bold text-[#1A1A2E] 
+        sm:text-[24px] 
+        md:text-[26px] 
+        lg:text-[30px]">
+        Behind The Lens
+      </h2>
 
-      {/* ── Author / play bar ── */}
-      <div className="flex flex-wrap items-center gap-3 mb-10 md:mb-12">
-        <div className="w-8 h-8 rounded-full bg-red-500 flex items-center justify-center shadow-sm">
-          <svg className="w-3 h-3 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M8 5v14l11-7z" />
-          </svg>
-        </div>
-        <div className="relative w-7 h-7 rounded-full overflow-hidden flex-shrink-0">
-          <Image src={AUTHOR.avatar} alt={AUTHOR.name} fill className="object-cover" sizes="28px" />
-        </div>
-        <p className="text-[13px] text-[#4B4B6A]">
-          <span className="font-semibold text-[#1A1A2E]">{AUTHOR.name}</span>
-          {" · "}Travel Photographer · Editorial
-        </p>
-      </div>
+      {/* Content grid - responsive layout */}
+      <div className="mt-6 grid grid-cols-1 items-start gap-6 
+        sm:mt-8 sm:gap-8 
+        md:grid-cols-1 md:gap-10 
+        lg:grid-cols-[420px_1fr] lg:gap-14">
 
-      {/* ── Two-column: small circles + text left / large circle right ── */}
-      <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-14">
-        {/* Left column */}
-        <div className="flex-1 flex flex-col gap-8">
-          {/* 3 small circles */}
-          <div className="flex items-center gap-4 sm:gap-6">
-            {SMALL_CIRCLES.map((c) => (
-              <div
-                key={c.alt}
-                className="relative rounded-full overflow-hidden shadow-md flex-shrink-0
-                  w-[100px] h-[100px] sm:w-[120px] sm:h-[120px] md:w-[130px] md:h-[130px]"
-              >
-                <Image src={c.src} alt={c.alt} fill className="object-cover" sizes="130px" />
+        {/* Location card - responsive sizing */}
+        <div className="rounded-[16px] p-[0.5px] shadow-[0_18px_50px_rgba(26,26,46,0.08)] 
+          sm:rounded-[20px] 
+          md:rounded-[24px]"
+          style={{ background: "linear-gradient(135deg,#8F9CD3,#FFCAA4)" }}>
+          <div className="flex items-start gap-3 rounded-[16px] bg-white p-3 
+            sm:gap-4 sm:p-4 
+            md:rounded-[24px]">
+
+            {/* Play button - responsive size */}
+
+
+            {/* Text content - responsive sizing */}
+            <div className="min-w-0 flex-1">
+              <div className="flex flex-row gap-1 text-center justify-start align-center ">
+                <div className="mt-1 flex h-4 w-8 flex-shrink-0 items-center justify-center rounded-md drop-shadow-md bg-[#FF2E2E] text-white 
+              sm:h-6 sm:w-9">
+
+                  <span className="ml-0.5 text-[10px] font-bold 
+                sm:text-[11px]">▶</span>
+
+
+
+                </div>
+                <span className="text-[14px] font-normal text-[#1A1A2E] 
+                sm:text-[16px] md:text-[18px] lg:text-[20px]">YouTube</span>
               </div>
-            ))}
+              <p className="text-xs leading-[1.5] text-[#4B4B6A] 
+                sm:text-sm sm:leading-[1.6]">
+                <b className="block  font-serif text-[12px] font-bold text-black  sm:text-base md:text-lg">Essential Viewing: Capturing magic moments</b><br />
+                Experience the tranquil beauty of Santorini sunrise through this calming 20mins video. Perfect for planning your morning routine or simply finding inner peace.
+              </p>
+            </div>
+
+            {/* Image - responsive size */}
+            <div className="relative h-[160px] w-[60px] flex-shrink-0 overflow-hidden rounded-full 
+              sm:h-[170px] sm:w-[70px] 
+              md:h-[180px] md:w-[80px] 
+              lg:h-[192px] lg:w-[92px]">
+              <OptimizedImage
+                src={visuals.behindCard}
+                alt="Behind the lens"
+                fill
+                className="object-cover"
+                sizes="(max-width:640px) 60px, (max-width:768px) 70px, (max-width:1024px) 80px, 92px"
+              />
+            </div>
           </div>
-          {/* Description */}
-          <p className="text-[14px] md:text-[15px] text-[#4B4B6A] leading-[1.8] max-w-[540px]">
-            Morocco is a country that demands you slow down and look closer.
-            Every wall, tile, doorway, and alley holds a story — and photographing
-            it means learning to see the unseen. The light shifts throughout the day,
-            transforming ancient medinas from warm golden tones at dawn to deep
-            violet shadows at dusk.
-          </p>
         </div>
 
-        {/* Right: large sunset circle */}
-        <div
-          className="relative flex-shrink-0 rounded-full overflow-hidden shadow-xl
-            w-[240px] h-[240px] sm:w-[280px] sm:h-[280px] md:w-[320px] md:h-[320px] lg:w-[360px] lg:h-[360px]"
-        >
-          <Image
-            src={IMAGES.behindTheLens.sunset}
-            alt="Moroccan sunset"
-            fill
-            className="object-cover"
-            sizes="(max-width: 640px) 240px, (max-width: 768px) 280px, (max-width: 1024px) 320px, 360px"
-          />
+        {/* Main text content - responsive sizing */}
+        <div className="max-w-full text-[12px] leading-[1.6] text-[#4B4B6A] 
+          sm:text-[13px] sm:leading-[1.7] 
+          md:max-w-[670px] md:text-[14px] md:leading-[1.8] 
+          lg:text-[15px] lg:leading-[1.9]">
+          <p>
+            Imperial cities are like living museums. Ancient walls and modern sneakers.Donkey carts beside scooters. Centuries-old craft tools next to QR-code payments. Don’t try to remove those contrasts. Use them to tell the truth of the place. The most powerful <a href="#" className="text-pink-700">This is an internal link.</a>                                          travel images show time stacked on time.
+          </p>
+          <p className="mt-3 sm:mt-4">
+
+            <b>Respect comes before the shot</b><br />
+            If you want portraits, ask politely. A smile, a greeting, and a short gesture are often enough. In Morocco, some people enjoy being photographed, others don’t—and that’s completely fair. If someone says no (or looks uncomfortable), step away. You’ll still find incredible photos everywhere, and the images you do capture will feel lighter because they were taken with respect.
+
+          </p>
         </div>
       </div>
     </section>

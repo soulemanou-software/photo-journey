@@ -1,0 +1,3 @@
+# This is a placeholder for images that fail to load
+# In production, you would replace this with an actual image file
+# For now, we'll use a data URL in the fallback component
